@@ -1,0 +1,153 @@
+html {
+    box-sizing: border-box;
+    font-size: 12px;
+    font-family: "open sans", helvetica, sans-serif;
+  }
+  @media (min-width: 500px) {
+    html {
+      font-size: 14px;
+    }
+  }
+  @media (min-width: 900px) {
+    html {
+      font-size: 16px;
+    }
+  }
+  
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  
+  header {
+    text-align: center;
+    height: 10vh;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    flex-direction: column;
+    padding: 2em;
+    width: 100%;
+  }
+  
+  section {
+    flex-direction: row;
+    background: #efefef;
+    padding: 1em 2em;
+    margin: 5%;
+    text-align: center;
+    box-shadow: 0 0.2em 0.45em 0.1em rgba(0, 0, 0, 0.4);
+    border-radius: 0.5em;
+    width: 90%;
+    max-width: 50em;
+  }
+  @media (min-width: 1300px) {
+    section {
+      flex-direction: column;
+    }
+  }
+  
+  h1 {
+    margin-bottom: 0;
+    font-weight: bold;
+  }
+  
+  h2 {
+    margin-bottom: 3rem;
+    font-weight: 400;
+  }
+  
+  form {
+    max-width: 40em;
+    margin: auto auto 1em auto;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 1rem;
+  }
+  @media (min-width: 400px) {
+    form {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (min-width: 900px) {
+    form {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  
+  fieldset {
+    padding: 0;
+    border: 0;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+  }
+  @media (min-width: 1300px) {
+    fieldset {
+      margin-top: 0;
+    }
+  }
+  
+  label {
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    background: #E8E8E8;
+    text-align: center;
+    padding: 1em;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 0.5rem;
+    border: 1px solid #ccc;
+    position: relative;
+    z-index: 1;
+  }
+  
+  label:hover {
+    background: #D8D8D8;
+  }
+  
+  input[type=radio] {
+    visibility: hidden;
+    position: absolute;
+    cursor: pointer;
+  }
+  
+  input[type=radio]:checked ~ label {
+    background: #56b056;
+    color: white;
+    box-shadow: 0 0.2em 0.45em 0.1em rgba(0, 0, 0, 0.4);
+    transform: scale(1.25);
+    animation: checked 200ms 1;
+    border: 1px solid #439043;
+    position: relative;
+    z-index: 5;
+  }
+  input[type=radio]:checked ~ .animal {
+    top: -2rem;
+    transition: all 200ms ease-in-out;
+    z-index: 10;
+  }
+  
+  @-webkit-keyframes checked {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.25);
+    }
+  }
+  .animal {
+    margin: auto;
+    grid-row: span 2/3;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    transition: all 200ms ease-in-out;
+    font-size: 3rem;
+  }
